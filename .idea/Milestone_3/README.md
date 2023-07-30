@@ -13,7 +13,7 @@ The Daily Volatility Microservice calculates the daily volatility of a specific 
 You can programmatically request data from the Daily Volatility Microservice by making a GET request with the stock ticker as a parameter.
 
 ### Example Call:
-
+Assuming microservice is deployed:
 http://localhost:3000/volatility?ticker=DDOG
 
 ## How to Programmatically RECEIVE Data
@@ -26,10 +26,13 @@ The Daily Volatility Microservice will respond with a JSON object containing the
 Below is a UML sequence diagram of how requesting/receiving the data works:
 
 ```
-+-------------------+          +-------------------+
-|   Client          |          |  Daily Volatility |
-|                   |          |  Microservice     |
-+-------------------+          +-------------------+
+User                          DailyVolatility Microservice                 Database of closing prices
+  |                                        |                                   |
+  |-----RequestVolatility(ticker)------->  |                                   |
+  |                                        |---RetrieveData(ticker)----------> |
+  |                                        |<---ReturnData(volatilityData)---  |
+  |<---ReturnVolatility(volatilityData)--- |                                   |
+  |                                        |                                   |
 
 ```
 
