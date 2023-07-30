@@ -37,6 +37,6 @@ User                          DailyVolatility Microservice                 Datab
 ```
 
 In the diagram:
-1. The "Client" sends a GET request to the microservice with the specific stock ticker as a parameter.
+1. The "User" sends a GET request to the microservice with the specific stock ticker as a parameter.
 2. The microservice calculates the daily volatility based on the stock ticker using the Alpha Vantage API.
 3. The microservice responds with a JSON object containing the stock ticker and its corresponding daily volatility to the client.
